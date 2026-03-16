@@ -2,12 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Staff } from '../models/staff';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class StaffService {
-  private apiUrl = 'https://localhost:44379/api/Staffs'; // Update with your API URL
+  //private apiUrl = 'https://localhost:44379/api/Staffs'; // Update with your API URL
+  private apiUrl = `${environment.apiUrl}/Staffs`;  // ✅ works both locally and in Docker
 
   constructor(private http: HttpClient) { }
 

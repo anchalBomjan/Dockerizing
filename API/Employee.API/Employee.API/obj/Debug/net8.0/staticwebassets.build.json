@@ -1,11 +1,1 @@
-{
-  "Version": 1,
-  "Hash": "Rjru2WaiUMI7BoGfjbeAGlRoho7SPRSjTsqzOXmSeSY=",
-  "Source": "Employee.API",
-  "BasePath": "_content/Employee.API",
-  "Mode": "Default",
-  "ManifestType": "Build",
-  "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
-}
+{"Version":1,"Hash":"LxOPRx7Pftr9n92peDwAfJj0q63EElQzrdBxlqQQ0Gc=","Source":"Employee.API","BasePath":"/","Mode":"Root","ManifestType":"Build","ReferencedProjectsConfiguration":[],"DiscoveryPatterns":[],"Assets":[],"Endpoints":[]}
