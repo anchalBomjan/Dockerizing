@@ -1,0 +1,33 @@
+services:
+
+  api:
+    build:
+      context: ./API/Employee.API
+      dockerfile: Dockerfile
+    container_name: employee_api
+    ports:
+      - "5116:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:8080
+      - ConnectionStrings__DefaultConnection=Server=host.docker.internal\SQLEXPRESS;Database=EmployeeModel;User Id=sa;Password=YourPassword123!;TrustServerCertificate=True;MultipleActiveResultSets=true;
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    networks:
+      - employee_network
+
+  ui:
+    build:
+      context: ./UI
+      dockerfile: Dockerfile
+    container_name: employee_ui
+    ports:
+      - "4200:80"
+    depends_on:
+      - api
+    networks:
+      - employee_network
+
+networks:
+  employee_network:
+    driver: bridge      
